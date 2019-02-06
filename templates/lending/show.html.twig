@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lending{% endblock %}
+
+{% block body %}
+    <h1>Lending</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ lending.id }}</td>
+            </tr>
+            <tr>
+                <th>CollectedAt</th>
+                <td>{{ lending.collectedAt ? lending.collectedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ReturnedAt</th>
+                <td>{{ lending.returnedAt ? lending.returnedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('lending_index') }}">back to list</a>
+
+    <a href="{{ path('lending_edit', {'id': lending.id}) }}">edit</a>
+
+    {{ include('lending/_delete_form.html.twig') }}
+{% endblock %}

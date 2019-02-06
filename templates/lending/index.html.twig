@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lending index{% endblock %}
+
+{% block body %}
+    <h1>Lending index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>CollectedAt</th>
+                <th>ReturnedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lending in lendings %}
+            <tr>
+                <td>{{ lending.id }}</td>
+                <td>{{ lending.collectedAt ? lending.collectedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ lending.returnedAt ? lending.returnedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('lending_show', {'id': lending.id}) }}">show</a>
+                    <a href="{{ path('lending_edit', {'id': lending.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('lending_new') }}">Create new</a>
+{% endblock %}

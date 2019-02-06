@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Lending{% endblock %}
+
+{% block body %}
+    <h1>Create new Lending</h1>
+
+    {{ include('lending/_form.html.twig') }}
+
+    <a href="{{ path('lending_index') }}">back to list</a>
+{% endblock %}
