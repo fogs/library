@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
+                <th>Author</th>
                 <th>Isbn</th>
                 <th>Number</th>
                 <th>actions</th>
@@ -20,6 +21,7 @@
             <tr>
                 <td>{{ book.id }}</td>
                 <td>{{ book.title }}</td>
+                <td>{{ book.authors | join }}</td>
                 <td>{{ book.isbn }}</td>
                 <td>{{ book.number }}</td>
                 <td>

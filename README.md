@@ -16,6 +16,7 @@ composer install
 yarn install
 yarn encore dev
 bin/console doctrine:schema:create
+bin/console doctrine:fixtures:load --append
 bin/console server:run
 ```
 Open http://127.0.0.1:8000 in your web browser (or whatever URL symfony gave you)

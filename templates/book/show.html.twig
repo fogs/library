@@ -20,6 +20,10 @@
                 <td>{{ book.isbn }}</td>
             </tr>
             <tr>
+                <th>Author</th>
+                <td>{{ book.authors | join }}</td>
+            </tr>
+            <tr>
                 <th>Number</th>
                 <td>{{ book.number }}</td>
             </tr>

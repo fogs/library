@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Member</th>
                 <th>CollectedAt</th>
                 <th>ReturnedAt</th>
                 <th>actions</th>
@@ -18,6 +19,7 @@
         {% for lending in lendings %}
             <tr>
                 <td>{{ lending.id }}</td>
+                <td>{{ lending.member }}</td>
                 <td>{{ lending.collectedAt ? lending.collectedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ lending.returnedAt ? lending.returnedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
