@@ -2,38 +2,47 @@
 
 {% block title %}Member index{% endblock %}
 
-{% block body %}
+{% block content %}
     <h1>Member index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Username</th>
-                <th>EmailAddress</th>
-                <th>LastLogin</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for member in members %}
-            <tr>
-                <td>{{ member.id }}</td>
-                <td>{{ member.username }}</td>
-                <td>{{ member.emailAddress }}</td>
-                <td>{{ member.lastLogin ? member.lastLogin|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('member_show', {'id': member.id}) }}">show</a>
-                    <a href="{{ path('member_edit', {'id': member.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('member_new') }}">Create new</a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>EmailAddress</th>
+                            <th>LastLogin</th>
+                            <th>actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for member in members %}
+                            <tr>
+                                <td>{{ member.id }}</td>
+                                <td>{{ member.username }}</td>
+                                <td>{{ member.emailAddress }}</td>
+                                <td>{{ member.lastLogin ? member.lastLogin|date('Y-m-d H:i:s') : '' }}</td>
+                                <td>
+                                    <a href="{{ path('member_show', {'id': member.id}) }}"><span
+                                                class="label label-primary">show</span></a>
+                                    <a href="{{ path('member_edit', {'id': member.id}) }}"><span
+                                                class="label label-warning">edit</span></a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="{{ path('member_new') }}" class="btn btn-success">Create new</a>
 {% endblock %}

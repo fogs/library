@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Member;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,7 +15,9 @@ class MemberType extends AbstractType
         $builder
             ->add('username')
             ->add('emailAddress')
-            ->add('lastLogin')
+            ->add('lastLogin',DateTimeType::class, [
+                'widget' => 'single_text',
+            ])
         ;
     }
 

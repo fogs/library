@@ -2,34 +2,40 @@
 
 {% block title %}Author index{% endblock %}
 
-{% block body %}
+{% block content %}
     <h1>Author index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for author in authors %}
-            <tr>
-                <td>{{ author.id }}</td>
-                <td>{{ author.name }}</td>
-                <td>
-                    <a href="{{ path('author_show', {'id': author.id}) }}">show</a>
-                    <a href="{{ path('author_edit', {'id': author.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('author_new') }}">Create new</a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Actions</th>
+                        </tr>
+                        {% for author in authors %}
+                            <tr>
+                                <td>{{ author.id }}</td>
+                                <td>{{ author.name }}</td>
+                                <td>
+                                    <a href="{{ path('author_show', {'id': author.id}) }}"><span
+                                                class="label label-primary">show</span></a>
+                                    <a href="{{ path('author_edit', {'id': author.id}) }}"><span
+                                                class="label label-warning">edit</span></a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="3">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="{{ path('author_new') }}" class="btn btn-success">Create new</a>
 {% endblock %}

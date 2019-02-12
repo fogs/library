@@ -1,5 +1,3 @@
-        /* Navbar is fixed to the top */
-        body {
-            min-height: 75rem;
-            padding-top: 4.5rem;
-        }
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~admin-lte/dist/css/AdminLTE.css";
+@import "~admin-lte/dist/css/skins/_all-skins.css";

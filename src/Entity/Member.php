@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Member
  *
  * @ORM\Table(name="Member")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\MemberRepository")
  */
 class Member
 {
@@ -188,7 +188,7 @@ class Member
 
     public function __toString()
     {
-        return $this->username;
+        return $this->username ?: '';
     }
 
 }

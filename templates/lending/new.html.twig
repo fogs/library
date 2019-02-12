@@ -2,10 +2,10 @@
 
 {% block title %}New Lending{% endblock %}
 
-{% block body %}
+{% block content %}
     <h1>Create new Lending</h1>
 
     {{ include('lending/_form.html.twig') }}
 
-    <a href="{{ path('lending_index') }}">back to list</a>
+    <a href="{{ path('lending_index') }}" class="btn btn-primary">back to list</a>
 {% endblock %}

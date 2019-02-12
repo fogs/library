@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            {# "app" must match the first argument to addEntry() in webpack.config.js #}
-            {{ encore_entry_link_tags("app") }}
-            <link rel="stylesheet" href="/build/app.css">
-        {% endblock %}
-    </head>
-    <body>
-        {% include "navigation.html.twig" %}
-        <main role="main" class="container">
-        {% block body %}{% endblock %}
-        </main>
-        {% block javascripts %}
-            {{ encore_entry_script_tags("app") }}
-            <script src="/build/runtime.js"></script>
-            <script src="/build/app.js"></script>
-        {% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags("app") }}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% endblock %}
+</head>
+
+<body class="skin-blue sidebar-mini" data-gr-c-s-loaded="true" style="height: auto; min-height: 100%;">
+<div class="wrapper" style="height: auto; min-height: 100%;">
+    {% include 'header.html.twig' %}
+
+    {% include 'sidebar.html.twig' %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 946.214px;">
+        <!-- Main content -->
+        <section class="content">
+            {% block content %}
+            {% endblock %}
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+</div>
+
+</body>
+{% block javascripts %}
+    {{ encore_entry_script_tags("app") }}
+{% endblock %}
 </html>

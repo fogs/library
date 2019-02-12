@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Book
  *
  * @ORM\Table(name="Book")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\BookRepository")
  */
 class Book
 {
@@ -188,7 +188,7 @@ class Book
 
     public function __toString()
     {
-        return $this->title;
+        return $this->title ?: '';
     }
 
 }

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Lending
  *
  * @ORM\Table(name="Lending")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\LendingRepository")
  */
 class Lending
 {

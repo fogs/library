@@ -2,37 +2,37 @@
 
 {% block title %}Book{% endblock %}
 
-{% block body %}
+{% block content %}
     <h1>Book</h1>
 
-    <table class="table">
+    <table class="table table-hover">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ book.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ book.title }}</td>
-            </tr>
-            <tr>
-                <th>Isbn</th>
-                <td>{{ book.isbn }}</td>
-            </tr>
-            <tr>
-                <th>Author</th>
-                <td>{{ book.authors | join }}</td>
-            </tr>
-            <tr>
-                <th>Number</th>
-                <td>{{ book.number }}</td>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ book.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ book.title }}</td>
+        </tr>
+        <tr>
+            <th>Isbn</th>
+            <td>{{ book.isbn }}</td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td>{{ book.authors | join }}</td>
+        </tr>
+        <tr>
+            <th>Number</th>
+            <td>{{ book.number }}</td>
+        </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('book_index') }}">back to list</a>
-
-    <a href="{{ path('book_edit', {'id': book.id}) }}">edit</a>
+    <a href="{{ path('book_index') }}" class=" btn btn-primary">back to list</a>
+    <a href="{{ path('book_edit', {'id': book.id}) }}" class="btn btn-warning">edit</a>
 
     {{ include('book/_delete_form.html.twig') }}
+
 {% endblock %}
