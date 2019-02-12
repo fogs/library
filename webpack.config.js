@@ -18,6 +18,9 @@ Encore
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
+    .addEntry('adminlte-custom', './assets/js/adminlte-custom.js')
+    // .addEntry('jquery.datatables', './vendor/datatables/datatables/media/js/jquery.dataTables.js')
+    // .addEntry('dataTables.bootstrap', './vendor/datatables/datatables/media/js/dataTables.bootstrap.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
