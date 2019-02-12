@@ -2,7 +2,9 @@
   "devDependencies": {
     "@symfony/webpack-encore": "^0.22.0",
     "bootstrap": "^4.2.1",
+    "bootstrap-daterangepicker": "^2.1.25",
     "jquery": "^3.3.1",
+    "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "popper.js": "^1.14.7",
     "sass-loader": "^7.0.1",

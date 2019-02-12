@@ -1,3 +1,32 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+home:
+    path: /
+    controller: App\Controller\DefaultController::index
+book:
+    path: /book
+    controller: App\Controller\BookController::index
+add-book:
+    path: /book/new
+    controller: App\Controller\BookController::new
+author:
+    path: /author
+    controller: App\Controller\AuthorController::index
+add-author:
+    path: /author/new
+    controller: App\Controller\AuthorController::new
+member:
+    path: /member
+    controller: App\Controller\MemberController::index
+add-member:
+    path: /member/new
+    controller: App\Controller\MemberController::new
+lending:
+    path: /lending
+    controller: App\Controller\MemberController::index
+add-lending:
+    path: /lending/new
+    controller: App\Controller\LendingController::new
+ 

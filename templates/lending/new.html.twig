@@ -1,11 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}New Lending{% endblock %}
+ 
+{% block page_title %}New Landing {% endblock %}
+ {% block page_subtitle %} {% endblock %}
+{% block page_content %}
+ <div class="row">
+	<div class="col-md-8">
+	           
+	          <div class="box box-primary">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">Create new Lending</h3>
+	            </div>
+				<div style="padding: 11px  8px">
+  					{{ include('lending/_form.html.twig') }}
+  				</div> <!-- end box -->
+	    	</div> <!-- end box -->
+	</div> <!-- end col-12 -->
+</div> <!-- end row -->
 
-{% block body %}
-    <h1>Create new Lending</h1>
-
-    {{ include('lending/_form.html.twig') }}
-
-    <a href="{{ path('lending_index') }}">back to list</a>
+    <a href="{{ path('lending_index') }}"><i class="fa fa-arrow-left">Back to list</i></a>
 {% endblock %}

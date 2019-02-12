@@ -1,13 +1,29 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}Edit Book{% endblock %}
+ 
+{% block page_title %}Edit Book {% endblock %}
+{% block page_subtitle %}{% endblock %}
 
-{% block body %}
-    <h1>Edit Book</h1>
+{% block page_content %}
+<div class="row">
+	<div class="col-md-8">
+	           
+	          <div class="box box-primary">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">Edit Book</h3>
+	               {{ include('book/_delete_form.html.twig') }}
+	            </div>
+				<div style="padding: 11px  8px">
+    				 {{ include('book/_form.html.twig', {'button_label': 'Update'}) }}
+    			</div> <!-- end box -->
+	    	</div> <!-- end box -->
+	</div> <!-- end col-12 -->
+</div> <!-- end row -->
+ <a href="{{ path('book_index') }}"><i class="fa fa-arrow-left">Back to list</i></a>
 
-    {{ include('book/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('book_index') }}">back to list</a>
-
-    {{ include('book/_delete_form.html.twig') }}
+   
 {% endblock %}
+
+
+
+

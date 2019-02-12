@@ -1,9 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}Member{% endblock %}
+ 
+{% block page_title %}Member {% endblock %}
+  {% block page_subtitle %}  {% endblock %}
+{% block page_content %}
+  
+<div class="row">  
+<div class="col-md-12">
 
-{% block body %}
-    <h1>Member</h1>
+
+    <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Member</h3>
+              {{ include('member/_delete_form.html.twig') }}
+              <a class="btn btn-success pull-right" href="{{ path('member_edit', {'id': member.id}) }}"><i class="fa fa-edit"></i></a>&nbsp;
+              
+            </div>
+  
 
     <table class="table">
         <tbody>
@@ -26,9 +39,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('member_index') }}">back to list</a>
+    </div><!-- box -->
+    </div><!-- col-md-12 -->
 
-    <a href="{{ path('member_edit', {'id': member.id}) }}">edit</a>
+    </div><!-- row -->
+    <a href="{{ path('member_index') }}"><i class="fa fa-arrow-left">Back to list</i></a>
 
-    {{ include('member/_delete_form.html.twig') }}
+    
 {% endblock %}

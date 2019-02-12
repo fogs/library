@@ -1,11 +1,20 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}Member index{% endblock %}
+ 
+{% block page_title %}Members List {% endblock %}
+ {% block page_subtitle %} {% endblock %}
+{% block page_content %}
+   
+ <div class="row">  
+<div class="col-md-12">
 
-{% block body %}
-    <h1>Member index</h1>
 
-    <table class="table">
+    <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Member List</h3>
+              <a href="{{ path('member_new') }}" class="btn btn-success   pull-right">Create new</a>
+            </div>
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -23,8 +32,8 @@
                 <td>{{ member.emailAddress }}</td>
                 <td>{{ member.lastLogin ? member.lastLogin|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('member_show', {'id': member.id}) }}">show</a>
-                    <a href="{{ path('member_edit', {'id': member.id}) }}">edit</a>
+                    <a href="{{ path('member_show', {'id': member.id}) }}"><i class="fa fa-eye"></i></a>
+                    <a href="{{ path('member_edit', {'id': member.id}) }}"><i class="fa fa-edit"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -34,6 +43,8 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('member_new') }}">Create new</a>
+    </div>
+    </div>
+    </div>
+    
 {% endblock %}

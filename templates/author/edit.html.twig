@@ -1,13 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}Edit Author{% endblock %}
+ {% block page_title %}Edit Author {% endblock %}
 
-{% block body %}
-    <h1>Edit Author</h1>
+ {% block page_subtitle %} {% endblock %}
+{% block page_content %}
+<div class="row">
+	<div class="col-md-8">
+	           
+	          <div class="box box-primary">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">Edit Author</h3>
+	              {{ include('author/_delete_form.html.twig') }}
+	            </div>
+				<div style="padding: 11px  8px">
+	           		 {{ include('author/_form.html.twig', {'button_label': 'Update'}) }}
+	    		</div> <!-- end box -->
+	    	</div> <!-- end box -->
+	</div> <!-- end col-12 -->
+</div> <!-- end row -->
 
-    {{ include('author/_form.html.twig', {'button_label': 'Update'}) }}
+    
 
-    <a href="{{ path('author_index') }}">back to list</a>
+    
+<a href="{{ path('author_index') }}">Back to list</a>
 
-    {{ include('author/_delete_form.html.twig') }}
 {% endblock %}

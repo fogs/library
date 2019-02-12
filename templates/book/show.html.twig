@@ -1,9 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}Book{% endblock %}
+ 
+{% block page_title %} Book {% endblock %}
+{% block page_subtitle %}{% endblock %}
 
-{% block body %}
-    <h1>Book</h1>
+{% block page_content %}
+    <div class="row">  
+<div class="col-md-12">
+
+
+    <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Book Detail</h3>
+               {{ include('book/_delete_form.html.twig') }}
+              <a class="btn btn-success pull-right" href="{{ path('book_edit', {'id': book.id}) }}"><i class="fa fa-edit"></i></a>&nbsp;
+              
+            </div>
 
     <table class="table">
         <tbody>
@@ -30,9 +42,15 @@
         </tbody>
     </table>
 
-    <a href="{{ path('book_index') }}">back to list</a>
+   
 
-    <a href="{{ path('book_edit', {'id': book.id}) }}">edit</a>
+    
 
-    {{ include('book/_delete_form.html.twig') }}
+   
+
+    </div><!-- box -->
+    </div><!-- col-md-12 -->
+
+    </div><!-- row -->
+    <a href="{{ path('book_index') }}"><i class="fa fa-arrow-left">Back to list</i></a>
 {% endblock %}

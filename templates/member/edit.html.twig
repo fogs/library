@@ -1,13 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}Edit Member{% endblock %}
+ 
+{% block page_title %}New Book {% endblock %}
+{% block page_subtitle %}  {% endblock %}
 
-{% block body %}
-    <h1>Edit Member</h1>
+{% block page_content %}
+<div class="row">
+	<div class="col-md-8">
+	           
+	          <div class="box box-primary">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">Edit Member</h3>
+	            </div>
+				<div style="padding: 11px  8px">
+	           		  {{ include('member/_form.html.twig', {'button_label': 'Update'}) }}
+	    		</div> <!-- end box -->
+	    	</div> <!-- end box -->
+	</div> <!-- end col-12 -->
+</div> <!-- end row -->
 
-    {{ include('member/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('member_index') }}">back to list</a>
-
-    {{ include('member/_delete_form.html.twig') }}
+<a href="{{ path('member_index') }}"><i class="fa fa-arrow-left">Back to list</i></a>
 {% endblock %}
+ 

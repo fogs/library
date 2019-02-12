@@ -1,9 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}Author{% endblock %}
+ 
+{% block page_title %} Author {% endblock %}
+ 
+{% block page_content %}
+<div class="row">  
+<div class="col-md-12">
 
-{% block body %}
-    <h1>Author</h1>
+
+    <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Author</h3>
+               {{ include('author/_delete_form.html.twig') }}
+              <a class="btn btn-success pull-right" href="{{ path('author_edit', {'id': author.id}) }}"><i class="fa fa-edit"></i></a>&nbsp;
+              
+            </div>
+  
 
     <table class="table">
         <tbody>
@@ -18,9 +30,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('author_index') }}">back to list</a>
+    
 
-    <a href="{{ path('author_edit', {'id': author.id}) }}">edit</a>
+    </div><!-- box -->
+    </div><!-- col-md-12 -->
 
-    {{ include('author/_delete_form.html.twig') }}
+    </div><!-- row -->
+    <a href="{{ path('author_index') }}"><i class="fa fa-arrow-left">Back to list</i></a>
 {% endblock %}

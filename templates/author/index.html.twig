@@ -1,11 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}Author index{% endblock %}
+ 
+{% block page_title %}Author List {% endblock %}
+{% block page_subtitle %} {% endblock %}
+{% block page_content %}
+ 
+<div class="row">  
+    <div class="col-md-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Author List</h3>
+              <a href="{{ path('author_new') }}" class="btn btn-success   pull-right">Create new</a>
 
-{% block body %}
-    <h1>Author index</h1>
+            </div>
+   
 
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,8 +29,8 @@
                 <td>{{ author.id }}</td>
                 <td>{{ author.name }}</td>
                 <td>
-                    <a href="{{ path('author_show', {'id': author.id}) }}">show</a>
-                    <a href="{{ path('author_edit', {'id': author.id}) }}">edit</a>
+                    <a href="{{ path('author_show', {'id': author.id}) }}"><i class="fa fa-eye"></i></a>
+                    <a href="{{ path('author_edit', {'id': author.id}) }}"><i class="fa fa-edit"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +41,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('author_new') }}">Create new</a>
+    </div><!-- box -->
+    </div><!-- col-md-12 -->
+    </div><!-- row -->
 {% endblock %}

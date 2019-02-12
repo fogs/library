@@ -1,13 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-avanzu.html.twig' %}
 
-{% block title %}Edit Lending{% endblock %}
+ 
+{% block page_title %}Edit Landing {% endblock %}
+ 
+{% block page_content %}
+    
+<div class="row">
+	<div class="col-md-8">
+	           
+	          <div class="box box-primary">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">Edit Lending</h3>
+	              {{ include('lending/_delete_form.html.twig') }}
+	            </div>
+				<div style="padding: 11px  8px">
+	           		   {{ include('lending/_form.html.twig', {'button_label': 'Update'}) }}
+	    		</div> <!-- end box -->
+	    	</div> <!-- end box -->
+	</div> <!-- end col-12 -->
+</div> <!-- end row -->
 
-{% block body %}
-    <h1>Edit Lending</h1>
-
-    {{ include('lending/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('lending_index') }}">back to list</a>
-
-    {{ include('lending/_delete_form.html.twig') }}
+<a href="{{ path('lending_index') }}"><i class="fa fa-arrow-left">Back to list</i></a> 
 {% endblock %}
